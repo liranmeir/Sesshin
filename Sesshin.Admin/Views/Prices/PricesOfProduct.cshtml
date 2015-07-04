@@ -1,0 +1,16 @@
+﻿@model List<Sesshin.Model.PriceModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>להלן המחירים המשוייכים למוצר - @Model.First().Product.Name</h2>
+
+@Html.Partial("_PricesTable", Model)
+
+<p>
+    @Html.ActionLink("צור חדש", "Create", new { productId = Model.First().Product.Id})
+</p>
+<p>
+    @Html.ActionLink("בחזרה לעמוד מוצר","Edit", "Products" , new { id = Model.First().Product.Id}, null)
+</p>

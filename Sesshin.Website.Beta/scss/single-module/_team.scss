@@ -1,0 +1,24 @@
+.ro-team-item {
+    @include center-block;
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 370px;
+
+    .ro-content {
+        h5 {
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            @include center-block;
+        }
+
+        .ro-social li {
+            color: $darkgray-color;
+            font-size: 18px;
+        }
+    }
+}

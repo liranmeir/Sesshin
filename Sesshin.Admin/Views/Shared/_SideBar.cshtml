@@ -1,0 +1,92 @@
+﻿<!-- BEGIN SIDEBAR -->
+<div class="page-sidebar-wrapper">
+    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+    <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+    <div class="page-sidebar navbar-collapse collapse">
+        <!-- BEGIN SIDEBAR MENU -->
+        <ul class="page-sidebar-menu" data-auto-scroll="false" data-auto-speed="200">
+            <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+            <li class="sidebar-toggler-wrapper">
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                <div class="sidebar-toggler">
+                </div>
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            </li>
+            <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+            <li class="sidebar-search-wrapper">
+                <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+                <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
+                <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
+                <form class="sidebar-search" action="extra_search.html" method="POST">
+                <a href="javascript:;" class="remove"></a>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <!-- DOC: value=" ", that is, value with space must be passed to the submit button -->
+                        <input class="btn submit" type="button" type="button" value=" " />
+                    </span>
+                </div>
+                </form>
+                <!-- END RESPONSIVE QUICK SEARCH FORM -->
+            </li>
+            <li class="start active "><a href="/"><i class="fa fa-home"></i><span class="title">
+                Dashboard </span><span class="selected"></span></a></li>
+            <li><a href="javascript:;"><i class="fa fa-shopping-cart"></i><span class="title">הזמנות
+            </span><span class="arrow "></span></a>
+                <ul class="sub-menu">
+                    <li><a href="ecommerce_index.html"><i class="fa fa-bullhorn"></i>Dashboard </a></li>
+                    <li><a href="ecommerce_orders.html"><i class="fa fa-shopping-cart"></i>הזמנות </a>
+                    </li>
+                    <li><a href="ecommerce_orders_view.html"><i class="fa fa-tags"></i>Order View </a>
+                    </li>
+                </ul>
+            </li>
+             
+            <li><a href="javascript:;"><i class="fa fa-gift"></i><span class="title">מוצרים
+            </span><span class="arrow "></span></a>
+                <ul class="sub-menu">
+                    <li><a href="@Url.Action("Index", "Products")">
+                    <span class="badge badge-roundless badge-danger">
+                        new </span><i class="fa fa-gift"></i>אינדקס 
+                </a></li>
+                     
+                </ul>
+            </li>
+            <li><a href="javascript:;"><i class="fa fa-file-text"></i><span class="title">כתבות
+            </span><span class="arrow "></span></a>
+                <ul class="sub-menu">
+                     <li><a href="@Url.Action("Index", "Articles")">
+                    <span class="badge badge-roundless badge-info">
+                        new </span><i class="fa fa-gift"></i>אינדקס 
+                </a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li><a href="javascript:;"><i class="fa fa-user"></i><span class="title">
+                                                                     
+                                                                      לקוחות ומטפלים
+                                                                 </span>
+                <span class="arrow "></span></a>
+                <ul class="sub-menu">
+                    <li><a href="@Url.Action("Index", "Customer")"><i class="fa fa-user"></i>ניהול לקוחות </a></li>
+                    <li><a href="@Url.Action("Index", "Therapists")"><i class="fa fa-group"></i>ניהול מטפלים </a></li>
+                </ul>
+            </li>
+             <li><a href="@Url.Action("Index", "BackgroundImages")"><i class="fa fa-folder-open"></i><span class="title">
+                                                                     
+                                                                      תמונות רקע
+                                                                 </span>
+                </a>
+                
+            </li>
+            
+            
+            <li class="last "><a href="charts.html"><i class="fa fa-bar-chart-o"></i><span class="title">
+                Visual Charts </span></a></li>
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+</div>
+<!-- END SIDEBAR -->

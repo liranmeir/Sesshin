@@ -1,0 +1,95 @@
+﻿<!--<div class="container">
+    <div class="row">
+        <div >
+            <h1>newstherapists</h1>
+            <div class="row">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                    <label for="search">Search:</label>
+                    <input class="form-control" id="search" ng-model="q" placeholder="Filter text">
+                </div>
+                <div class="col-xs-4">
+                    <label for="search"># per page:</label>
+                    <input class="form-control" max="100" min="1" ng-model="pageSize" type="number">
+                </div>
+            </div>
+            <br>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <a href="" ng-click="predicate='name'; reverse=!reverse">
+                                        Name
+                                    </a>
+                                </th>
+                                <th>
+                                    <a href="" ng-click="predicate='city'; reverse=!reverse">
+                                        City
+                                    </a>
+                                </th>
+                                <th>
+                                    <a href="" ng-click="predicate='country'; reverse=!reverse">
+                                        Country
+                                    </a>
+                                </th>
+                                <th>
+                                    <a href="" ng-click="predicate='language'; reverse=!reverse">
+                                        Language
+                                    </a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr current-page="currentPage" dir-paginate="therapist in therapists | filter:q | itemsPerPage: pageSize | orderBy:predicate:reverse">
+                                <td><a   target="_blank">{{therapist.firstName}}</a></td>
+                                <td>{{therapist.phone}}</td>
+                                <td>{{therapist.threatmentType}}</td>
+                                <td>{{therapist.dateHired}}</td>
+                            </tr>
+                        <tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="other-controller" ng-controller="OtherController">
+            <div class="text-center">
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<table datatable="" class="row-border hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Foo</td>
+            <td>Bar</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+        </tr>
+        <tr>
+            <td>987</td>
+            <td>Iamout</td>
+            <td>Ofinspiration</td>
+        </tr>
+    </tbody>
+</table>
+
+<input type="button" class="btn btn-primary" value="Add new Therapist"
+       ng-click="showCreateTherapistForm()" />
+
+<input type="button" class="btn btn-primary" value="update new Therapist"
+       ng-click="showUpdateTherapistForm(123)" />

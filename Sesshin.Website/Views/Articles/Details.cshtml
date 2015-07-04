@@ -1,0 +1,33 @@
+﻿@model Sesshin.Website.Models.ArticleViewModel
+@{
+    ViewBag.Title = Model.PageTitle;
+    ViewBag.MetaDescription = Model.PageDescription;
+    ViewBag.MetaKeywords = Model.PageKeywords;
+    
+    var hasMoreThanOneInage = Model.BackgroundImages.Any() && Model.BackgroundImages.Count > 1;
+   
+}
+  
+@if (hasMoreThanOneInage)
+{
+      @Helpers.MainContentChange(Model.BackgroundImages)
+}
+
+else 
+{
+    @Html.Partial("_DefaultMainContentChange")
+}
+
+<div class="text-content ">
+    <div class="article-details">
+        <div class="nano">
+            <div class="content"> 
+                <div class="article-content">
+                    <h2 class="h2-articles">@Model.Headline</h2>
+                    <p>@Html.Raw(Model.Content)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

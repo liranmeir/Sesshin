@@ -1,0 +1,109 @@
+﻿
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Customer
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse">
+            </a>
+            <a href="#portlet-config" data-toggle="modal" class="config">
+            </a>
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form role="form" class="form-horizontal">
+            <div class="form-body">
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="FirstName">שם פרטי</label>
+
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input class="form-control" data-val="true" ng-model="editableTherapist.firstName" id="FirstName"
+                                   name="FirstName" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="FirstName">שם משפחה</label>
+
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input class="form-control" data-val="true" ng-model="editableTherapist.lastName" id="LastName"
+                                   name="LastName" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">סוגי טיפולים</label>
+                    <div class="col-md-3">
+                        <select class="form-control"
+                                ng-model="editableTherapist.threatmentType"
+                                ng-options="threatment for threatment in threatmentTypes"></select>
+                    </div>
+                </div>
+                 
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="FirstName">תאריך התחלה</label>
+
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <div class="well well-sm">
+                                <datepicker ng-model="editableTherapist.dateHired"></datepicker>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">סטטוס</label>
+                    <div class="col-md-9">
+                        <div class="radio-list">
+                             
+                                        <input type="radio" name="optionsRadios" id="optionsRadios25" value="1"  
+                                               mg-model="editableTherapist.isActive">
+                               
+                                 פעיל
+                           
+                                        <input type="radio" name="optionsRadios" id="optionsRadios26" value="0"  
+                                               ng-model="editableTherapist.isActive">
+                                    
+                                 לא פעיל
+                           
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="FirstName">עיר</label>
+
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input class="form-control" data-val="true"
+                                   ng-model="editableTherapist.city"
+                                   typeahead="city for city in getCities($viewValue)"
+                                   typeahead-loading="loadingLocations"
+                                   id=" city"
+                                   name="City" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions fluid">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn blue" ng-click="submitForm()">שמור</button>
+                        <a class="btn default" ng-click="cancelForm()">חזור</a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+@model Sesshin.Model.Customer
+
+
+<div class="form-group">
+    @Html.LabelFor(model => model.FirstName, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.LastName, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Phone, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Phone)
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Email, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.IsAcceptEmail, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.IsAcceptEmail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IsAcceptEmail)
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.LeadSource, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-6">
+        @Html.EditorFor(model => model.LeadSource, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.LeadSource)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Aniversery, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-6">
+        @Html.EditorFor(model => model.Aniversery, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Aniversery)
+    </div>
+</div>
+
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Birthday, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-6">
+        @Html.EditorFor(model => model.Birthday, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Birthday)
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, new { @class = "col-md-3 control-label" })
+        </div>
+
+        @Html.EditorFor(model => model.Address)
+        @Html.ValidationMessageFor(model => model.Address)
+    </div>
+</div>

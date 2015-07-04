@@ -1,0 +1,33 @@
+﻿@model Sesshin.Model.Address
+
+ 
+
+<div class="form-group">
+    @Html.LabelFor(model => model.City, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.HiddenFor(model => model.CityId)
+        @Html.TextBoxFor(model => model.City, new { data_provide = "typeahead", autocomplete = "off" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Street, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.Street, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Number, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.EditorFor(model => model.Number, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Remarks, new { @class = "col-md-3 control-label" })
+
+    <div class="col-md-4">
+        @Html.TextAreaFor(model => model.Remarks, new { @class = "form-control" })
+    </div>
+</div>

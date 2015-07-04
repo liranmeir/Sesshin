@@ -1,0 +1,52 @@
+@model Sesshin.Model.Therapist
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.LastName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.LastName)
+    @Html.ValidationMessageFor(model => model.LastName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.FirstName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.FirstName)
+    @Html.ValidationMessageFor(model => model.FirstName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.HireDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.HireDate)
+    @Html.ValidationMessageFor(model => model.HireDate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Phone)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Phone)
+    @Html.ValidationMessageFor(model => model.Phone)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Email)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Email)
+    @Html.ValidationMessageFor(model => model.Email)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Clinic)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Clinic)
+    @Html.ValidationMessageFor(model => model.Clinic)
+</div>
+

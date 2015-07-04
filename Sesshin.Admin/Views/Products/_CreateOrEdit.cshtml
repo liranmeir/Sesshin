@@ -1,0 +1,48 @@
+@model Sesshin.Model.Product
+<div class="highlight">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Description)
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Description, new { @class = "ckeditor" })
+    </div>
+</div>
+<div class="highlight">
+    <h2>
+        SEO</h2>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.EnglishName)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.EnglishName)
+        @Html.ValidationMessageFor(model => model.EnglishName)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.PageTitle)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.PageTitle)
+        @Html.ValidationMessageFor(model => model.PageTitle)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.PageDescription)
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.PageDescription, new { @cols = 80, @rows = 4 })
+        @Html.ValidationMessageFor(model => model.PageDescription)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.PageKeywords)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.PageKeywords, new { @class = "input-long" })
+        @Html.ValidationMessageFor(model => model.PageKeywords)
+    </div>
+</div>

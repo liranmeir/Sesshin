@@ -1,0 +1,74 @@
+@model Sesshin.Model.Product
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="bs-hilight">
+    <h2>
+        עמוד מוצר</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Product</legend>
+            @Html.HiddenFor(model => model.Id)
+            @Html.Partial("_CreateOrEdit", Model)
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>
+                        תמונות
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        <a data-toggle="modal" 
+                           data-target="#myModal" 
+                           href="@string.Concat("/BackGroundImages/GetBackgroundImages?id=", Model.Id, "&type=product")" 
+                           class="btn btn-info btn-lg">פתח תמונות</a>
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4>
+                        רשימת המחירים
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <div>
+                    @if (Model.PriceModels.Any())
+                    {
+                        <p>
+                            @Html.ActionLink("לצפייה ברשימת המחירים", "PricesOfProduct", "Prices", new { productId = Model.Id }, new { @class = "btn btn-warning" })
+                        </p>
+                    }
+                    else
+                    {
+                        <p>
+                            לא קיימים מחירים למוצר זה
+                        </p>
+                        <p>
+                            @Html.ActionLink("לחץ להוספה", "Create", "Prices", new { productId = Model.Id }, null)
+                        </p>
+                    }
+                </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 10px">
+                <p>
+                    <input type="submit" value="שמור" class="btn btn-success" />
+                </p>
+            </div>
+        </fieldset>
+    }
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+</div>
+<!-- /.modal -->
+<div class="alert alert-success">
+    @Html.ActionLink("בחזרה לרשימה", "Index", null, new { @class = "btn btn-danger" })
+</div>

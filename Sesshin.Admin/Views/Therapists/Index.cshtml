@@ -1,0 +1,83 @@
+@model IEnumerable<Sesshin.Model.Therapist>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            LastName
+        </th>
+        <th>
+            FirstName
+        </th>
+        <th>
+            FullName
+        </th>
+        <th>
+            HireDate
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Clinic
+        </th>
+        <th>
+            ThreatmentTypes
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.LastName
+        </td>
+        <td>
+			@item.FirstName
+        </td>
+        <td>
+			@item.FullName
+        </td>
+        <td>
+			@String.Format("{0:g}", item.HireDate)
+        </td>
+        <td>
+			@item.Phone
+        </td>
+        <td>
+			@item.Email
+        </td>
+        <td>
+			@(item.City == null ? "None" : item.City.Name)
+        </td>
+        <td>
+			@item.Clinic
+        </td>
+        <td>
+			@(item.ThreatmentTypes == null ? "None" : item.ThreatmentTypes.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

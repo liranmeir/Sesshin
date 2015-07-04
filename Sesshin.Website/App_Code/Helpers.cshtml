@@ -1,0 +1,20 @@
+﻿@using System.Text
+@using Sesshin.Service
+
+@helper MainContentChange(ICollection<string> images)
+    {
+    var style = new StringBuilder();
+    var dataCycle = images.Any() && images.Count > 1 ? "true" : "false";
+     
+    <div class="main-content-change" data-cycle="@dataCycle">
+        
+        @foreach (var image in images)
+        {
+            var folder = Utils.GetBackgroundImagesFolder();
+            style.AppendFormat("background: url('{0}/{1}') no-repeat;", folder, image);
+
+            <div style="@style.ToString()"></div>
+        }
+        
+    </div>
+} 

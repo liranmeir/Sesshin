@@ -1,0 +1,10 @@
+﻿@model dynamic
+@if (System.Configuration.ConfigurationManager.ConnectionStrings["SesshinConn"].ConnectionString.StartsWith("Data Source=.\\SQL2008"))
+{
+    
+    <div class="Metronic-alerts alert alert-danger fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+        <i class="fa-lg fa fa-warning"></i>  
+        youre on local db
+    </div>
+}

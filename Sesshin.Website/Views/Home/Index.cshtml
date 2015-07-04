@@ -1,0 +1,45 @@
+@model Sesshin.Website.Models.IndexViewModel
+@{
+    ViewBag.Title = "עיסוי עד הבית, ימי גיבוש, מתנות מיוחדות";
+    ViewBag.MetaDescription = @"סשין מפיקה מתחמי טיפולים לאירועים פרטיים ועיסקיים, מפעילה שירות עיסוי עד הבית, המלון או הצימר. מעסות ומעסים, איכותיים ואסתטיים. לחבילות המיוחדות הקליקו כאן.";
+    ViewBag.MetaKeywords = "עיסוי עד הבית,מסאג' עד הבית,מסאז' עד הבית, ימי גיבוש, ימי גיבוש לעובדים,מתנות מיוחדות,רעיונות למסיבת רווקות";
+}
+
+@Html.Partial("_DefaultMainContentChange")
+<div class="text-content">
+    <div id="navBoxes">
+        <ul>
+            <li>
+                <div  >
+                    <div class="box box-bg2" style="margin-right: 3px">
+                        <div class="box-text-floater">
+                            <div>עיסוי עד הבית</div>
+                            <div>
+                                <a href="/products/single-massage" class="home-massage-link">יחיד</a>
+                                <a href="/products/couple-massage" class="home-massage-link">זוגי</a> 
+                            </div>  
+                        </div>
+                    </div>
+                </div>    
+            </li>
+            @foreach (var box in Model.LinkBoxes)
+            {
+            <li>
+                <div >
+                    <a href="@box.Link" class="block-anchor">
+                        <div class="box box-bg2">
+                            <div class="box-text-floater">
+                                @box.Name
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            }
+        </ul>
+    </div>
+    <div class="slogen">
+        <img src="/Images/Layout/slogen.png" />
+    </div>
+</div>
+ 

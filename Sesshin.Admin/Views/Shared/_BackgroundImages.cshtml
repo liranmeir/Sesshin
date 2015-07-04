@@ -1,0 +1,120 @@
+﻿@using Sesshin.Service
+@model Sesshin.Admin.Models.BackgroundImageVM
+ 
+<div id="background-modal"class="modal-dialog" style="width: 960px" data-id="@Model.Id" data-type="@Model.Type">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;</button>
+            <h4 class="modal-title">
+                תמונות</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4>
+                                תמונות נבחרות</h4>
+                        </div>
+                        <div class="panel-body">
+                            <ul id="selected-sortable" class="connectedSortable" style="min-height: 412px">
+                                @foreach (var image in Model.SelectedImages)
+                                {
+                                    var url = string.Concat(Utils.GetBackgroundImagesFolder(), image.Name);
+                                    <li>
+                                        <div>
+                                            <span class="label label-primary">@image.Name</span>
+                                        </div>
+                                        <div>
+                                            <img src="@url" data-id="@image.Id" alt="@image.Name" width="350px" class="img-thumbnail img-responsive"/>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4>
+                                תמונות אפשריות</h4>
+                        </div>
+                        <div class="panel-body">
+                            <ul id="sortable2" class="connectedSortable" style="min-height: 412px">
+                                @foreach (var image in Model.AvailableImages)
+                                {
+                                    var url = string.Concat(Utils.GetBackgroundImagesFolder(), image.Name);
+                                    <li>
+                                        <div>
+                                            <span class="label label-default">@image.Name</span>
+                                        </div>
+                                        <div>
+                                            <img src="@url" data-id="@image.Id" alt="@image.Name" width="350px" class="img-thumbnail img-responsive"/>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="save-images" data-dismiss="modal">
+                    שמור וסגור</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>
+<!-- /.modal-dialog -->
+<script type="text/javascript">
+    $(function () {
+        debugger;
+        $("#selected-sortable, #sortable2").sortable({
+            connectWith: ".connectedSortable"
+        }).disableSelection();
+
+        $('#save-images').on('click', function (e) {
+
+            e.preventDefault();
+
+            var selectedImages = $('#selected-sortable img');
+            if (selectedImages) {
+
+                var arrIds = [];
+                selectedImages.each(function () {
+                    arrIds.push($(this).data('id'));
+                });
+
+                var id = $('#background-modal').data('id');
+                var type = $('#background-modal').data('type');
+                var data = {};
+                data.id = id;
+                data.arr = arrIds;
+                data.type = type;
+
+                console.log(data.arr);
+                debugger;
+
+                $.ajax({
+                    url: '/BackgroundImages/UpdateImages',
+                    type: 'post',
+                    data: data,
+                    dataType: "json",
+                    traditional: true,
+                    success: function (data) {
+                        console.log(data);
+                        $.pnotify({
+                            title: 'עידכון תמונה',
+                            text: 'עידכון בוצע בהצלחה :)',
+                            type: 'success'
+                        });
+                    }
+                });
+            }
+        });
+    });
+        
+</script>

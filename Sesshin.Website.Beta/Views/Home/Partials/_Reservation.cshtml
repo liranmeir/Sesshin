@@ -1,0 +1,58 @@
+﻿<div id="reservation" class="ro-section ro-padding-top" data-ng-controller="ContactController">
+
+    <div class="container">
+        <div class="col-xs-12 ro-reservation-heading">
+            <h3 class="ro-hr-heading ro-section-mb">RESERVATION</h3>
+        </div>
+        <div class="ro-reservation clearfix">
+            <div class="row">
+                <div class="col-xs-12 text-center ro-font-size-4 ro-light-text ro-section-mb">
+                    <i>
+                        Please book in advance to get the best service from us. We wishing you a great day.
+                        <br>
+                        Thanks!
+                    </i>
+                </div>
+                <div class="col-md-10 col-md-offset-1 col-xs-12 ro-section-mb-small" ng-controller="ContactController">
+                    <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+                    <form class="ro-form ro-reservation-form clearfix rtl" name="contactform" novalidate=""
+                          ng-submit="submit(contactform)">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <textarea placeholder="סשין שלום, אני מתעניין ב..." name="remarks" ng-model="formData.remarks"></textarea>
+                            </div>
+                            <div class="col-md-4"> 
+                                <input type="text" 
+                                       name="name" 
+                                       placeholder="שם" 
+                                       ng-model="formData.name" 
+                                       ng-class="{ 'has-error': contactform.name.$invalid && submitted }" 
+                                       required />
+                                <input type="text"
+                                       name="phone"
+                                       placeholder="טלפון"
+                                       required class="required"
+                                       ng-model="formData.phone"
+                                       ng-class="{ 'has-error': contactform.phone.$invalid && submitted }" /> 
+                            </div>
+                            <div class="col-md-4">
+                                
+                                        @*<input type="text" placeholder="תאריך" class="ro-date-picker" />*@ 
+                                <input type="text" placeholder="אימייל" name="email" ng-model="formData.email" />
+                                     
+                                        <button type="submit" class="ro-submit ro-btn-2" ng-disabled="submitButtonDisabled">הזמן</button>
+ 
+                                 
+                            </div>
+                        </div>
+                    </form>
+                    <p ng-class="result" class="rtl" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
+
+                </div>
+                <div class="col-xs-12 ro-section-mb-big">
+                    <div class="ro-font-size-4 text-center"><b>Opentime:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8:00am -11:30am&nbsp;&nbsp;/&nbsp;&nbsp;2:00pm-5:30pm&nbsp;&nbsp;/&nbsp;&nbsp;7:00pm-10:00pm`</b></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

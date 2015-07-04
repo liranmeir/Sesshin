@@ -1,0 +1,73 @@
+﻿@model Sesshin.Model.PriceModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2><h2>עריכת מחיר עבור מוצר @Model.Product.Name</h2></h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PriceModel</legend>
+
+       
+        @Html.Hidden("ProductID",@Model.Product.Id)
+        @*<div class="editor-field">
+            @Html.DropDownList("ProductID", String.Empty) 
+            
+        </div>*@
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SubTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SubTitle)
+            @Html.ValidationMessageFor(model => model.SubTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div> 
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Duration)
+        </div> 
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Duration)
+            @Html.ValidationMessageFor(model => model.Duration)
+        </div>
+       
+        
+        <p>
+             <input type="submit" value="שמור" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+<div class="alert alert-info">
+    @Html.ActionLink("חזרה לרשימה", "PricesOfProduct", new { productId = @Model.Product.Id }, null)
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

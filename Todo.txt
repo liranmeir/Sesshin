@@ -1,0 +1,26 @@
+X-add region in code first-X
+X-finish customer screesn -Stoped on jquery data table enable like MetronicsX
+x-deploy to qa-x
+x-fix auto copmlete-x 
+x-contacts from contact form will be inserted directly to db-x
+x-fix migration-x
+x- publish web site and admin + update DB with schecma compare-x
+x- publish ADMIN and check if fix in web config helped <system.webServer> ...-x
+
+x-update the code to send email from :-noreply@sesshin.co.il TO info@SESSHIN.CO.IL -x
+x-publish site-check if email sending works..-x
+
+
+STOPPING POINT!
+-data binding to a form angular-forms
+
+-finish therapist Screen
+-fix icon bug 
+https://github.com/FortAwesome/Font-Awesome/wiki/Troubleshooting
+
+
+
+
+-insert data to customer table
+-minify JS
+-improve publishing!
