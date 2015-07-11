@@ -1,16 +1,18 @@
-﻿<div id="reservation" class="ro-section ro-padding-top" data-ng-controller="ContactController">
+﻿@model Sesshin.Website.Beta.Models.ContactUsVm
+<div id="reservation" class="ro-section ro-padding-top" data-ng-controller="ContactController">
 
     <div class="container">
         <div class="col-xs-12 ro-reservation-heading">
-            <h3 class="ro-hr-heading ro-section-mb">RESERVATION</h3>
+            <h3 class="ro-hr-heading ro-section-mb">@Model.FormName</h3>
         </div>
         <div class="ro-reservation clearfix">
             <div class="row">
                 <div class="col-xs-12 text-center ro-font-size-4 ro-light-text ro-section-mb">
                     <i>
-                        Please book in advance to get the best service from us. We wishing you a great day.
+                        @Model.Text
+
                         <br>
-                        Thanks!
+                      תודה!
                     </i>
                 </div>
                 <div class="col-md-10 col-md-offset-1 col-xs-12 ro-section-mb-small" ng-controller="ContactController">
@@ -50,7 +52,13 @@
 
                 </div>
                 <div class="col-xs-12 ro-section-mb-big">
-                    <div class="ro-font-size-4 text-center"><b>Opentime:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8:00am -11:30am&nbsp;&nbsp;/&nbsp;&nbsp;2:00pm-5:30pm&nbsp;&nbsp;/&nbsp;&nbsp;7:00pm-10:00pm`</b></div>
+                    <div class="ro-font-size-4 text-center"><b>שעות פתיחה:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        א-ה&nbsp;&nbsp;
+                        8:00-21:00&nbsp;&nbsp;/&nbsp;&nbsp;
+                        ו-ש&nbsp;&nbsp;
+                        9:00-21:00&nbsp;&nbsp; 
+
+                    </b></div>
                 </div>
             </div>
         </div>

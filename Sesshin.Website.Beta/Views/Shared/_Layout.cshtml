@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>פורה וידה -מסאג' עד הבית, מסאג' זוגי, מתנות מיוחדות</title>
+    <title>פורה וידה - מסאג' עד הבית, עיסוי באירועים, מתנות מיוחדות</title>
     <link rel="shortcut icon" href="~/assets/images/favicon.png">
-    <meta name="description" content="Aqua | Spa and Beauty HTML5 Template">
+    <meta name="description" content="פורה וידה - מסאג' עד הבית, עיסוי באירועים, מתנות מיוחדות">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     @Styles.Render("~/assets/css")
@@ -46,8 +46,8 @@
                         <li><a href="#team" class="ro-easing-link">מטפלים</a></li>
                         @*<li><a href="#shop" class="ro-easing-link">חנות</a></li>*@
                         <li><a href="#membership" class="ro-easing-link">מחירון</a></li>
-                        <li><a href="#blog" class="ro-easing-link">מתנות</a></li>
-                        <li><a href="#reservation" class="ro-easing-link">בלוג</a></li>
+                        <li><a href="#space" class="ro-easing-link">גלריה</a></li>
+@*                        <li><a href="#reservation" class="ro-easing-link">בלוג</a></li>*@
                     </ul>
                     <div id="ro-hamburger" class="ro-hamburger visible-xs pull-right"><span></span></div>
                 </div>
@@ -55,70 +55,67 @@
             </div>
         </div>
     </nav>
-    <div id="ro-main" class="ro-main clearfix">
-        <header id="home" class="ro-section ro-onepage-home">
-            <div class="ro-cell-vertical-wrapper">
-                <div class="ro-cell-middle">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-4 ro-content">
-                                <p class="ro-font-size-3 ro-mb-40">Live The Good Life, 
-
-<span class="ro-aqua-brand"><span class="ro-font-size-1 ro-color-dark">Pura Vida&nbsp;</span><span class="ro-font-size-2 ro-color-main">by Sesshin</span></span><br />Clear mind. fresh body. loving soul</p>@*<a href="#" class="ro-btn-bd-1">SEE MORE</a>*@
-                            </div>
+<div id="ro-main" class="ro-main clearfix">
+    
+    
+    @RenderBody()
+    <footer class="ro-bg-dark ro-section">
+        <div class="container">
+            <div class="ro-main-footer">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 ro-footer-item">
+                        <h5>Pura Vida Spa & More</h5>
+                        <p>info@sesshin.co.il /<br/>puravida.sesshin.co.il<br/>054-2341004 / 03-1234567
+                        </p>
+                        <a href="#" class="ro-btn-bd-1 hvr-radial-out">רוצים לקבל מאיתנו שובר מתנה ?</a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12 ro-footer-item">
+                        <h5>כתובתנו</h5>
+                        <p>חברון 4 תל אביב<br/>ישראל
+                        </p><br class="hidden-xs"/>
+                        <a href="@(Url.Action("Careers", "Home"))" class="ro-btn-bd-1 hvr-radial-out">דרושים</a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12ro-footer-item ro-open-time">
+                        <h5>שעות פתיחה</h5>
+                        <p>א-ה &nbsp;
+                            8:00am - 9:00pm
+                        </p>
+                        <p>ו-ש &nbsp;
+                            9:00pm - 9:00pm
+                        </p>
+                    </div>
+                    <div class="col-lg-1 visible-lg">
+                        <div class="ro-footer-separator"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-7 col-xs-12 ro-footer-item">
+                        <h5>ניוזלטר</h5>
+                        <div class="ro-footer-newletter">
+                            <input type="text"/><a href="#"><i class="icon-basic-mail-open-text"></i></a>
                         </div>
+                        <ul class="ro-social">
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-gplus"></i></a></li>
+                            <li><a href="#"><i class="icon-stumbleupon"></i></a></li>
+                            <li><a href="#"><i class="icon-tumblr"></i></a></li>
+                            <li><a href="#"><i class="icon-vimeo"></i></a></li>
+                            <li><a href="#"><i class="icon-pinterest"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                            <li><a href="#"><i class="icon-instagrem"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </header>
-        @RenderBody()
-        <footer class="ro-bg-dark ro-section">
-            <div class="container">
-                <div class="ro-main-footer">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 ro-footer-item">
-                            <h5>NEW BUSINESS</h5>
-                            <p>Business@bluecadet.com /<br />hello.domain.com<br />123.645.87 / 028.299.024</p><a href="#" class="ro-btn-bd-1 hvr-radial-out">WANT TO SUBCRIBLE US ?</a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12 ro-footer-item">
-                            <h5>OUR ADDRESS</h5>
-                            <p>1234 Frankford ave<br />Philadelphia, PA 12457</p><br class="hidden-xs" /><a href="#" class="ro-btn-bd-1 hvr-radial-out">CAREERS</a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12ro-footer-item ro-open-time">
-                            <h5>OPENTIME</h5>
-                            <p>8:00am - 11:30am</p>
-                            <p>2:00am - 5:30pm</p>
-                            <p>7:00pm - 10:00pm</p>
-                        </div>
-                        <div class="col-lg-1 visible-lg">
-                            <div class="ro-footer-separator"></div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-7 col-xs-12 ro-footer-item">
-                            <h5>NEWSLETTER SIGNUP</h5>
-                            <div class="ro-footer-newletter">
-                                <input type="text" /><a href="#"><i class="icon-basic-mail-open-text"></i></a>
-                            </div>
-                            <ul class="ro-social">
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                <li><a href="#"><i class="icon-gplus"></i></a></li>
-                                <li><a href="#"><i class="icon-stumbleupon"></i></a></li>
-                                <li><a href="#"><i class="icon-tumblr"></i></a></li>
-                                <li><a href="#"><i class="icon-vimeo"></i></a></li>
-                                <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                                <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                                <li><a href="#"><i class="icon-instagrem"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="ro-foot-footer">
-                    <h6>© @(DateTime.Now.Year) PURA-VIDA MASSAGE AND MORE. BY <a href="http://www.sesshin.com">SESSHIN.CO.IL</a></h6>
-                </div>
+            <div class="ro-foot-footer">
+                <h6>© @(DateTime.Now.Year) PURA-VIDA MASSAGE AND MORE. BY
+                    <a href="http://www.sesshin.com">SESSHIN.CO.IL</a></h6>
             </div>
-        </footer>
-        <div id="ro-backtop"><i class="icon-up"></i></div>
-    </div><!-- build:js vendors/vendors-compressed/plugins-min.js -->
+        </div>
+    </footer>
+    <div id="ro-backtop"><i class="icon-up"></i>
+    </div>
+</div>
+    <!-- build:js vendors/vendors-compressed/plugins-min.js -->
 
     @*<script src='vendors/jquery/dist/jquery.min.js'></script>
     <script src='vendors/bootstrap/dist/js/bootstrap.min.js'></script>

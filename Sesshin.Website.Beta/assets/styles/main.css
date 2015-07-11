@@ -1,4 +1,4 @@
-@charset "UTF-8"; 
+﻿@charset "UTF-8"; 
 /*Theme Name : Aqua Spa
 Theme URI    : http://themeforest.net/user/themeroyal
 Author       : THEMEROYAL
@@ -42,6 +42,7 @@ Text Domain  : progression
 */
 /* TYPOGRAPHY */
 body {
+    direction: rtl;
   /*font-family: "Josefin Sans", sans-serif;*/
   font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
@@ -1965,6 +1966,8 @@ ul {
   text-align: center; }
   .ro-testimonial-slider .ro-item h5 {
     margin-bottom: 20px; }
+  .ro-testimonial-slider .ro-item p {
+    font-style: italic }
 .ro-testimonial-slider .flex-direction-nav {
   position: relative;
   text-align: center; }

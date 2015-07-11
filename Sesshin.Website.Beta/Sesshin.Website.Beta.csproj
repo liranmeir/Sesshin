@@ -182,9 +182,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Models\CareersVM.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContactResponse.cs" />
+    <Compile Include="Models\ContactUsVm.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\HomeVM.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1872,10 +1876,11 @@
     <Content Include="Views\Home\Partials\_Space.cshtml" />
     <Content Include="Views\Home\Partials\_Shop.cshtml" />
     <Content Include="Views\Home\Partials\_Reservation.cshtml" />
-    <Content Include="Views\Home\Partials\_PriceList - Copy.cshtml" />
     <Content Include="Views\Home\Partials\PriceList\_Beauty.cshtml" />
     <Content Include="Views\Home\Partials\PriceList\_Body.cshtml" />
     <Content Include="Views\Home\Partials\PriceList\_Beauty - Copy.cshtml" />
+    <None Include="Views\Home\Careers.cshtml" />
+    <Content Include="Views\Home\Partials\_Slogen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

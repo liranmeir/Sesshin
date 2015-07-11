@@ -8,6 +8,7 @@ using Microsoft.Practices.Unity;
 using Sesshin.Models;
 using Sesshin.Service;
 using Sesshin.Service.Contracts;
+using Sesshin.Website.Beta.Models;
 
 namespace Sesshin.Website.Beta.Controllers
 {
@@ -15,7 +16,30 @@ namespace Sesshin.Website.Beta.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new HomeVM()
+            {
+                ContactUsVm =
+                    new ContactUsVm()
+                    {
+                        FormName = "הזמנות",
+                        Text = "ככל שתמהרו להזמין כך נוכל לשבץ לכם את המטפלים הטובים ביותר "
+                    }
+            };
+            return View(model);
+        }public ActionResult Careers()
+        {
+            var model = new CareersVM()
+            {
+                ContactUsVm =
+                    new ContactUsVm()
+                    {
+                        FormName = "השאר פרטים",
+                        Text = "מעוניין לפרסם אצלנו השאר פרטים"
+                    }
+            };
+
+
+            return View(model);
         }
 
         public ActionResult About()

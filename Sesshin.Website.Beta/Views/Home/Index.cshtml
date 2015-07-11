@@ -1,4 +1,6 @@
-﻿@Html.Partial("Partials/_Services")
+﻿@model Sesshin.Website.Beta.Models.HomeVM
+@Html.Partial("Partials/_Slogen")
+@Html.Partial("Partials/_Services")
 
 @Html.Partial("Partials/_PriceList")
 
@@ -11,7 +13,7 @@
 @Html.Partial("Partials/_Team")
 
 
-@Html.Partial("Partials/_Advertise")
+@*@Html.Partial("Partials/_Advertise")*@
 
 
 @*@Html.Partial("Partials/_Shop")*@
@@ -20,7 +22,7 @@
 @Html.Partial("Partials/_Membership")
 
 
-@Html.Partial("Partials/_Blog")
+@*@Html.Partial("Partials/_Blog")*@
 
 
-@Html.Partial("Partials/_Reservation")
+@Html.Partial("Partials/_Reservation", Model.ContactUsVm)
