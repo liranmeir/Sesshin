@@ -4,7 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Microsoft.Practices.Unity;
 using Sesshin.Models;
+using Sesshin.Service;
+using Sesshin.Service.Contracts;
 
 namespace Sesshin.Website.Beta.Controllers
 {
@@ -31,6 +34,20 @@ namespace Sesshin.Website.Beta.Controllers
             {
                 if (ModelState.IsValid)
                 {
+
+                   // contact.IsRequestMobile == Utils.IsMobileDevice(Request.Headers.UserAgent); ;
+
+
+                    var customerService = IocConfig.IocContiner.Resolve<ICustomerService>();
+                    var customer = Utils.GetCustomerFromContact(contact);
+                    customerService.AddCustomersToDb(customer);
+                    customerService.UploadToActiveTrailIfAccepted(customer);
+
+
+                    var emailService = IocConfig.IocContiner.Resolve<IEmailService>();
+                    emailService.SendEmail(contact);
+
+
                     var model = new ContactResponse() {IsSuccess = true, Message="ההודעה התקבלה נציג יצור איתך קשר בהקדם"};
                     var response = Request.CreateResponse(HttpStatusCode.Created, model);
                     return response;
