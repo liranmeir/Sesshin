@@ -23,30 +23,44 @@
                             <div class="col-md-4">
                                 <textarea placeholder="סשין שלום, אני מתעניין ב..." name="remarks" ng-model="formData.remarks"></textarea>
                             </div>
-                            <div class="col-md-4"> 
-                                <input type="text" 
-                                       name="name" 
-                                       placeholder="שם" 
-                                       ng-model="formData.name" 
-                                       ng-class="{ 'has-error': contactform.name.$invalid && submitted }" 
-                                       required />
+                            <div class="col-md-4">
+                                <input type="text"
+                                       name="name"
+                                       placeholder="שם"
+                                       ng-model="formData.name"
+                                       ng-class="{ 'has-error': contactform.name.$invalid && submitted }"
+                                       required/>
                                 <input type="text"
                                        name="phone"
                                        placeholder="טלפון"
                                        required class="required"
                                        ng-model="formData.phone"
-                                       ng-class="{ 'has-error': contactform.phone.$invalid && submitted }" /> 
+                                       ng-class="{ 'has-error': contactform.phone.$invalid && submitted }"/>
                             </div>
                             <div class="col-md-4">
-                                
-                                        @*<input type="text" placeholder="תאריך" class="ro-date-picker" />*@ 
-                                <input type="text" placeholder="אימייל" name="email" ng-model="formData.email" />
-                                     
-                                        <button type="submit" class="ro-submit ro-btn-2" ng-disabled="submitButtonDisabled">הזמן</button>
- 
-                                 
+
+                                @*<input type="text" placeholder="תאריך" class="ro-date-picker" />*@
+                                <input type="text" placeholder="אימייל" name="email" ng-model="formData.email"/>
+
+                                <button type="submit" class="ro-submit ro-btn-2" ng-disabled="submitButtonDisabled">הזמן</button>
+
+
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"
+                                                   name="isAcceptMail"
+                                                   ng-model="formData.IsAcceptMail"
+                                                   ng-true-value="true" 
+                                                   ng-false-value="false"> מוכן לקבל דיוור
+                                        </label>
+                                    </div>
+                                </div>
+                            </div></div>
                     </form>
                     <p ng-class="result" class="rtl" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
 

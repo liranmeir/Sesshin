@@ -19,43 +19,38 @@
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav id="ro-main-nav" class="ro-main-nav-style-2">
+    <nav id="ro-main-nav" class="ro-main-nav-style-2 ">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-12 col-xs-10">
                     <a href="\">
-                              <img src="/assets/images/purev-logo.jpg" alt="aqua spa" class="ro-brand" />
-                          </a>
+                        <img src="/assets/images/purev-logo.jpg" alt="aqua spa" class="ro-brand" />
+                    </a>
                 </div>
                 <div class="col-md-9 col-sm-12 col-xs-2">
                     <ul class="ro-nav-content text-center rtl">
                         <li class="visible-xs"><a href="index.html"><img src="/assets/images/aqua-brand3.svg" alt="Pura vida" /></a></li>
                         <li>
                             <a href="#home">דף הבית</a>
-                            <ul class="ro-sub-nav">
-                                <li><a href="basic.html">Basic</a></li>
-                                <li><a href="fullwidth.html">Full width</a></li>
-                                <li><a href="fullheight.html">Full height</a></li>
-                                <li><a href="onepage.html">Onepage</a></li>
-                                <li><a href="shop-homepage.html">Shoping</a></li>
-                            </ul>
+
                         </li>
                         <li><a href="#service" class="ro-easing-link">אודות</a></li>
                         @*<li><a href="#space" class="ro-easing-link">SPACE</a></li>*@
                         <li><a href="#testimonial" class="ro-easing-link">מכתבי תודה</a></li>
                         <li><a href="#team" class="ro-easing-link">מטפלים</a></li>
+                        <li><a href="@(Url.Action("Careers", "Home"))" class="ro-easing-link">פרסום למטפלים </a></li>
                         @*<li><a href="#shop" class="ro-easing-link">חנות</a></li>*@
-                        <li><a href="#membership" class="ro-easing-link">מחירון</a></li>
+                        <li><a href="#price" class="ro-easing-link">מחירון</a></li>
                         <li><a href="#space" class="ro-easing-link">גלריה</a></li>
-@*                        <li><a href="#reservation" class="ro-easing-link">בלוג</a></li>*@
+                        @*                        <li><a href="#reservation" class="ro-easing-link">בלוג</a></li>*@
                     </ul>
                     <div id="ro-hamburger" class="ro-hamburger visible-xs pull-right"><span></span></div>
                 </div>
-                
+
             </div>
         </div>
     </nav>
-<div id="ro-main" class="ro-main clearfix">
+<div id="ro-main" class="ro-main clearfix ">
     
     
     @RenderBody()
