@@ -1,0 +1,58 @@
+﻿@model Sesshin.Website.Models.PricesViewModel
+@{
+    ViewBag.Title = "מחירון";
+    ViewBag.MetaDescription = Model.PageDescription;
+    ViewBag.MetaKeywords = Model.PageKeywords;
+
+}
+<ul data-role="listview" data-inset="true">
+    @{ int i = 1; }
+    @foreach (var box in Model.LinkBoxes)
+    { 
+        <li><a href="#@("boxDescription" + i)" 
+               data-rel="popup" 
+               data-transition="flow" >
+            <div>
+                <h1 class="linkbox-text">
+                    @box.Name
+                </h1>
+                <h2 class="linkbox-text-subtext">
+                    @box.SubText
+                </h2>
+                @if (!string.IsNullOrEmpty(box.Price) && box.Price != "0")
+                {
+                    <div class="linkbox-minuts">
+                        <span class="linkbox-minuts-num">@box.Minutes </span><span class="linkbox-minuts-text">
+                            דקות </span>
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(box.Price) && box.Price != "0")
+                {
+                    <div class="linkbox-price">
+                        <span>@box.Price </span><span class="linkbox-price-sign">₪ </span>
+                    </div>
+                }
+                <div>
+                    @Html.Hidden(box.Id.ToString(), box.Description)
+                </div>
+            </div>
+        </a></li>
+                i++;
+    }
+</ul>
+@{
+    int j = 1;
+    foreach (var box in Model.LinkBoxes)
+    {
+    <div data-role="popup" id="@("boxDescription" + j)" >
+        <p>
+            @box.Description
+        </p>
+    </div>
+        j++;
+    }
+}
+@section script
+{
+    @{Html.RenderPartial("_GoogleConversion");}
+}

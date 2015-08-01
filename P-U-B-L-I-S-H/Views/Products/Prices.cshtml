@@ -1,0 +1,102 @@
+﻿@model Sesshin.Website.Models.PricesViewModel
+
+@{
+    ViewBag.Title = "מחירון";
+    ViewBag.MetaDescription = Model.PageDescription;
+    ViewBag.MetaKeywords = Model.PageKeywords;
+
+    var hasMoreThanOneInage = Model.BackgroundImages.Any() && Model.BackgroundImages.Count > 1;
+ }  
+
+ 
+@if (hasMoreThanOneInage)
+{
+      @Helpers.MainContentChange(Model.BackgroundImages)
+}
+
+else 
+{
+    @Html.Partial("_DefaultMainContentChange")
+}
+
+ 
+@Helpers.MainContentChange(Model.BackgroundImages) 
+<div class="text-content">
+    <div id="nav-boxes-long">
+        <ul>
+            @{ int i = 1; }
+            @foreach (var box in Model.LinkBoxes) 
+            { 
+                <li>
+                    <a href="#">
+                        <div class="@string.Format("boxLong box-bg{0}", i)" data-price-id="@box.Id" data-name="@box.Name">
+                            <div class="linkbox-text" >
+                                @box.Name
+                            </div>
+                            <div class="linkbox-text-subtext">
+                                @box.SubText
+                            </div>
+                            
+                            @if (!string.IsNullOrEmpty(box.Price) && box.Price != "0")
+                            {
+                                <div class="linkbox-minuts">
+                                    <span class="linkbox-minuts-num">@box.Minutes </span>
+                                    <span class="linkbox-minuts-text">דקות </span>
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(box.Price) && box.Price!= "0")
+                            {
+                            <div class="linkbox-price">
+                                <span >@box.Price  </span>
+                                <span class="linkbox-price-sign">₪ </span>
+                            </div>
+                             }
+                             
+                            <div data-discription-id="@box.Id">
+                                @Html.Hidden(box.Id.ToString(), box.Description)
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                i++;
+            }
+        </ul>
+    </div>
+    <div id="boxDescription">
+        <p>
+            ורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי. 
+        </p>
+         <p>
+        ורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי. 
+        </p>
+    </div>
+</div>
+
+@section script
+{
+     @{Html.RenderPartial("_GoogleConversion");}
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.boxLong').click(function () {
+
+                var id = $(this).attr('data-price-id');
+                var name = $(this).attr('data-name');
+                var desc = $('div[data-discription-id="' + id + '"] input').val();
+                $('#boxDescription').html('<h2>' + name + '</h2>' + '<p>' + desc + '</p>');
+
+                $.each($('.boxLong'), function () {
+
+                    $(this).animate({ width: 'toggle' });
+                });
+                $('#boxDescription').delay(500).animate({ width: 'toggle' });
+            });
+            $('#boxDescription').click(function () {
+
+                $('#boxDescription').animate({ width: 'toggle' });
+                $('.boxLong').delay(500).animate({ width: 'toggle' });
+            });
+        });
+</script>
+}
+

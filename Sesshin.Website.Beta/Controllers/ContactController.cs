@@ -25,26 +25,21 @@ namespace Sesshin.Website.Beta.Controllers
             return "value";
         }
 
-        //todo stopping point
-
+       
         // POST: api/Contact
         public HttpResponseMessage Post([FromBody]Contact contact)
         {
             try
             {
                 if (ModelState.IsValid)
-                {
-
-                   // contact.IsRequestMobile == Utils.IsMobileDevice(Request.Headers.UserAgent); ;
-
-
-                    var customerService = IocConfig.IocContiner.Resolve<ICustomerService>();
+                { 
+                    var customerService = new CustomerService();
                     var customer = Utils.GetCustomerFromContact(contact);
                     customerService.AddCustomersToDb(customer);
                     customerService.UploadToActiveTrailIfAccepted(customer);
 
 
-                    var emailService = IocConfig.IocContiner.Resolve<IEmailService>();
+                    var emailService = new Service.EmailService();
                     emailService.SendEmail(contact);
 
 

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Sesshin.Model.Article>
+@{
+    ViewBag.Title = "אינדקס כתבות סשין";
+}
+
+ @Html.Partial("_DefaultMainContentChange")
+<div class="text-content">
+     <h2 class="h2-article-index">אינדקס כתבות</h2>
+      
+    <div class="articles-index-details-box">
+        <div class="nano">
+            <div class="content">
+                    @if (!Model.Any())
+                    {
+                        <h1 style="margin-right: 15px">לא נמצאו כתבות</h1>
+                    }
+                    else
+                    {
+                   
+                        <div class="article-index-content">
+                            @foreach (var article in Model)
+                            {
+                                <div class="box-article" >
+                                    <a href="/Articles/@article.EnglishName">
+                                        <div class="article-box-text-floater">
+                                            
+                                            @article.Name
+                                            
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "צור קשר";
+}
+@section script
+{
+   @{Html.RenderPartial("_GoogleConversion");}
+}
+
+<div class="text-content">
+    <!-- Contacts -->
+    <div id="contacts" class="contacts">
+        <div class="row">
+            <!-- Alignment -->
+            <div class="col-sm-offset-7 col-sm-4">
+                @if (ViewBag.IsMessageSent == null)
+                {
+                
+                    <!-- Form itself -->
+                    <form name="contact" class="well" id="contactForm" novalidate action="/Home/Contact"
+                    method="POST">
+                    <legend>השאר פרטים</legend>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="שם מלא" id="Name" name="Name"
+                            required data-validation-required-message="הקלד שם מלא" />
+                        <p class="help-block">
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="טלפון" id="Phone" name="Phone"
+                            required data-validation-required-message="הקלד טלפון" />
+                        <p class="help-block">
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="מייל" id="email" name="Email"
+                            required data-validation-required-message="הקלד אימייל" />
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" cols="100" class="form-control" placeholder="הערות" id="message"
+                            name="Remarks" required data-validation-required-message="Please enter your message"
+                            minlength="5" data-validation-minlength-message="Min 5 characters" maxlength="999"
+                            style="resize: none"></textarea>
+                    </div>
+                    <div class="form-group">
+                       
+                       <div class="col-xs-offset-2 col-xs-10">
+                           @* <div class="checkbox">*@
+                                <label>
+                                    <input type="checkbox" name="IsAcceptMail" id="IsAcceptMail" value="true" checked="checked" />
+                                    מעוניין לקבל מיילים מסשין
+                                </label>
+                            @*</div>*@
+                        </div>
+                       
+
+                     @*   <input type="checkbox" name="IsAcceptMail" id="IsAcceptMail" value="true"   />
+                            <label  >
+                                מעוניין לקבל מיילים מסשין
+                            </label>*@
+                       
+                    </div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary pull-right">
+                        שלח</button>
+                    <br />
+                    </form>
+                }
+                else
+                {
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4>
+                                תודה על פנייתך :)
+                            </h4>
+                        </div>
+                        <div class="panel-body">
+                            נציג יחזור אליך בדקות הקרובות
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

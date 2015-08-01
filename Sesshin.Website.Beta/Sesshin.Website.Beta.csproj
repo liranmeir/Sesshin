@@ -336,6 +336,7 @@
     <Content Include="assets\images\testimonial.jpg" />
     <Content Include="assets\scripts\main-ng.js" />
     <Content Include="assets\scripts\main.js" />
+    <Content Include="assets\scripts\utils.js" />
     <Content Include="assets\styles\main.css" />
     <Content Include="assets\styles\plugins.css" />
     <Content Include="Content\bootstrap.css" />

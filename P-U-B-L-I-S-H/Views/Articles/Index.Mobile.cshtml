@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Sesshin.Model.Article>
+@{
+    ViewBag.Title = "אינדקס כתבות סשין";
+  
+}
+<div class="text-content">
+    <h2 class="h2-article-index">
+        אינדקס כתבות</h2>
+    <div>
+        @if (!Model.Any())
+        {
+            <h1>
+                לא נמצאו כתבות</h1>
+        }
+        else
+        {
+                   
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="חפש כתבה..."
+                data-inset="true">
+                @foreach (var article in Model)
+                {
+                    <li><a href="/Articles/@article.EnglishName">
+                        <div class="article-box-text-floater">
+                            @article.Name
+                        </div>
+                    </a></li>
+                }
+            </ul>
+        }
+    </div>
+</div>

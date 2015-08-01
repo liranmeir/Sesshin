@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<link type="text/css" href="/Content/themes/humanity/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
+<link type="text/css" href="/Content/jquery.timepicker.css" rel="stylesheet" />
+
+<div id="contact-info" class="contact-info">
+    <form method="POST" action="email.asp"> 
+        <fieldset>
+            <legend>השאר פרטים ונציג יחזור אליך בדקות הקרובות</legend>
+            <div class="field-row">
+                <label for="date">למתי?</label>
+                <input id="datepicker" class="inputbox hasDatepicker" maxlength="50" name="date" size="15" type="text" placeholder="לחץ כדי לבחור תאריך">
+            </div>
+            <div class="field-row">
+                <label for="time">שעה?</label> 
+                <span class="ui-timepicker-container"><input id="time" class="time ui-timepicker-input" maxlength="50" name="hour" size="15" type="text" placeholder="לחץ כדי לבחור שעה" autocomplete="off"></span>
+            </div>
+            <div class="field-row therapist-gender">
+                <input type="checkbox" name="terapist" value="מטפל"> מטפל
+                <input type="checkbox" name="terapistit" value="מטפלת"> מטפלת
+            </div>
+            <div class="field-row">
+                <label for="name">
+                    שם מלא</label><input class="inputbox" id="Text1" maxlength="50" name="name" size="15" type="text">
+            </div>
+            <div class="field-row">
+                <label for="email">
+                    אימייל</label><input class="inputbox" id="email" maxlength="50" name="email" size="15" type="text">
+            </div>
+            <div class="field-row">
+                <label for="telephone">
+                    נייד</label><input class="inputbox" id="telephone" maxlength="15" name="telephone" size="15" type="text">
+            </div>
+            <div class="field-row">
+                <label for="address">כתובת</label>
+                <textarea class=" " cols="30" id="textarea" name="address" rows="4" placeholder="הקלד עיר, רחוב, מספר בית ,מספר דירה"></textarea>
+            </div>
+            <div class="field-row ">
+                <div class="div-button">
+                    <input type="submit" class="myButton" value="שלח">
+                    <!--<input type="button" class="myButton" value="שלח" /-->
+                </div>
+                <div class="div-approve">
+                    <input type="checkbox" name="approve" value="מאשר">
+                    <span> אני מודע/ת לכך שלעיסוי <b>אין</b> כל תוכן מיני </span>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+@section script
+{
+    <script src="../../Scripts/PageScripts/jquery.timepicker.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/PageScripts/common.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function isValidateOk() {
+
+            var isValid = true;
+
+            if ($("#datepicker").isEmpty()) {
+                $('label[for="date"]').blink();
+                isValid = false;
+            }
+            if ($("#time").isEmpty()) {
+                $("label[for='time']").blink();
+                isValid = false;
+            }
+            if (!$("input[name='terapist']").is(':checked') && !$("input[name='terapistit']").is(':checked')) {
+                $(".therapist-gender").blink();
+                isValid = false;
+            }
+
+            if ($("input[name='name']").isEmpty()) {
+                $("label[for='name']").blink();
+                isValid = false;
+            }
+
+            if (!$("input[name='email']").isEmail()) {
+                $("label[for='email']").blink();
+                isValid = false;
+            }
+
+            if (!$("input[name='telephone']").isPhone()) {
+                $("label[for='telephone']").blink();
+                isValid = false;
+            }
+
+            if ($("textarea[name='address']").isEmpty()) {
+                $("label[for='address']").blink();
+                isValid = false;
+            }
+
+            if (!$("input[name='approve']").is(':checked')) {
+                $(".div-approve").blink();
+                isValid = false;
+            }
+            return isValid;
+        }
+
+        $(function () {
+            $.datepicker.setDefaults($.datepicker.regional["he"]);
+            $("#datepicker").datepicker({ minDate: '0' });
+            $("#time").timepicker();
+            $('.myButton').click(function () {
+                return isValidateOk();
+            });
+        });
+    </script>
+    }

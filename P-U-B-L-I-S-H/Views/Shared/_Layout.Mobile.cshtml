@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title - סשין</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@ViewBag.MetaDescription"/>
+    <meta name="keywords" content="@ViewBag.MetaKeywords"/>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @RenderSection("styles", false)
+    
+    <link rel="stylesheet" href="/Content/themes/sesshin-custom-theme.css" />
+    <link rel="stylesheet" href="/Content/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="/Content/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+   @* <link href="/jquery.mobile.rtl/css/themes/default/rtl.jquery.mobile-1.4.0.css" rel="stylesheet" />*@
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/jquery.mobile.rtl/js/rtl.jquery.mobile-1.4.0.js"></script>
+    <style type="text/css">
+        .mobile-headline
+        {
+            -webkit-margin-before: 0.5em;
+            -webkit-margin-after: 0.5em;
+            font-size: 1.02em;
+        }
+        .ui-header .ui-title.custom-title {
+            text-overflow: clip;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="panel" data-theme="a" id="nav-panel">
+            <ul id="menu" data-role="listview" data-filter="true" data-filter-placeholder="חיפוש מהיר"
+                data-inset="true">
+                <li><a href="/Articles/about-us" class="menu-link">מי אנחנו</a></li>
+                <li data-role="list-divider">אירועים עיסקיים</li>
+                <li><a href="#" class="menu-link">מתחם טיפולים</a></li>
+                <li><a href="/Articles/mobile-therapists" class="menu-link">מטפלים מסתובבים</a></li>
+                <li><a href="/Articles/massage-at-the-office" class="menu-link">טיפולים במשרד</a></li>
+                <li><a href="/Articles/mystics" class="menu-link">מיסטיקנים</a></li>
+                <li data-role="list-divider">אירועים פרטיים</li>
+                <li><a href="/products/single-massage" class="menu-link">עיסוי עד הבית יחיד</a></li>
+                <li><a href="/products/couple-massage" class="menu-link">עיסוי עד הבית זוגי</a></li>
+                <li data-role="list-divider"><a href="/Articles/massage-types" class="menu-link">סוגי
+                                                 הטיפולים </a></li>
+                <li><a href="/Articles/swedish-massage" class="menu-link">שבדי</a></li>
+                <li><a href="/Articles/shiatsu" class="menu-link">שיאצו</a></li>
+                <li><a href="/Articles/tuina" class="menu-link">טוינה</a></li>
+                <li><a href="/Articles/traditional-thai-massage" class="menu-link">עיסוי תאילנדי</a></li>
+                <li><a href="/Articles/reiki" class="menu-link">רייקי</a></li>
+                <li><a href="/Articles/Theta-healing" class="menu-link">תטא הילינג</a></li>
+                <li data-role="list-divider">מחירון</li>
+                <li><a href="/products/prices/single-massage" class="menu-link">מחירון עיסוי יחיד</a></li>
+                <li><a href="/products/prices/couple-massage" class="menu-link">מחירון עיסוי זוגי</a></li>
+                <li><a href="/Home/Contact" class="menu-link">צור קשר</a></li>
+                <li><a href="/under-constraction.html" class="menu-link">מכתבי תודה</a></li>
+                <li data-role="list-divider"><a href="/Articles" class="menu-link">אינדקס כתבות</a></li>
+            </ul>
+        </div>
+        <!-- /panel -->
+        <div data-role="header" data-position="fixed">
+            <a data-rel="back" data-role="button" data-transition="slide" data-direction="reverse"
+               data-icon="back" data-inline="true" class="ui-btn-icon-left ">חזור</a> <a href="#nav-panel"
+                                                                                         data-icon="bars" data-iconpos="notext">Menu</a>
+            <h1 class="custom-title">
+                סשין - עיסוי עד הבית
+            </h1>
+        </div>
+        <div data-role="content">
+            @RenderBody()
+            @Html.Partial("_MobileFooter")
+        </div>
+        <div data-role="footer" data-position="fixed">
+            @Html.Partial("_MobileNavBar")
+        </div>
+    </div>
+    @RenderSection("script", false)
+    @Html.Partial("_GoogleAnalitics")
+</body>
+</html>
