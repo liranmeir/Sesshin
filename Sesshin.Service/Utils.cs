@@ -31,6 +31,10 @@ namespace Sesshin.Service
             return customer;
         }
 
-        
+
+        public static bool IsMobileDevice(string userAgent)
+        {
+            return(userAgent.Contains("iPhone") || userAgent.Contains("Windows Phone") || userAgent.Contains("Android"));
+        }
     }
 }
