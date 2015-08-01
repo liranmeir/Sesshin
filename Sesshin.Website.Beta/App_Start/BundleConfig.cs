@@ -32,6 +32,7 @@ namespace Sesshin.Website.Beta
 
             bundles.Add(new StyleBundle("~/assets/css").Include(
                       "~/assets/fonts/aqua/aqua.css",
+                      "~/assets/fonts/nachlieliclm/stylesheet.css",
                       "~/assets/fonts/icon-fonts/styles.css",
                       "~/assets/styles/plugins.css",
                       "~/assets/styles/main.css"));
