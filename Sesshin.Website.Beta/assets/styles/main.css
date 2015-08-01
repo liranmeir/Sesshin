@@ -44,7 +44,7 @@ Text Domain  : progression
 body {
     direction: rtl;
   /*font-family: "Josefin Sans", sans-serif;*/
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'nachlieli_clm', sans-serif;
   font-weight: 600;
   font-size: 16px;
   color: #444444;
@@ -61,6 +61,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.1em; }
   h1.ro-font-aqua, h2.ro-font-aqua, h3.ro-font-aqua, h4.ro-font-aqua, h5.ro-font-aqua, h6.ro-font-aqua {
     font-family: 'aqua';
+    
     font-weight: 400; }
   h1 .ro-heading-h, h2 .ro-heading-h, h3 .ro-heading-h, h4 .ro-heading-h, h5 .ro-heading-h, h6 .ro-heading-h {
     line-height: 1.6; }
@@ -1970,6 +1971,7 @@ ul {
     font-style: italic }
 .ro-testimonial-slider .flex-direction-nav {
   position: relative;
+    direction: ltr;
   text-align: center; }
   .ro-testimonial-slider .flex-direction-nav:before, .ro-testimonial-slider .flex-direction-nav:after {
     content: " ";

@@ -19,6 +19,7 @@ app.controller('ContactController', function ($scope, $http) {
                      Phone: contactform.phone.$modelValue,
                      Email: contactform.email.$modelValue,
                      Remarks: contactform.remarks.$modelValue,
+                     IsAcceptMail: contactform.isAcceptMail.$modelValue
                       
                 })
                 .success(function (data) {
