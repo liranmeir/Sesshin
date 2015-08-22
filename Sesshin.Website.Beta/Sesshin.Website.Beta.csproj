@@ -370,9 +370,9 @@
     <Content Include="assets\fonts\nachlieliclm\nachlieliclm-lightoblique-webfont.eot" />
     <Content Include="assets\fonts\nachlieliclm\nachlieliclm-lightoblique-webfont.ttf" />
     <Content Include="assets\fonts\nachlieliclm\nachlieliclm-lightoblique-webfont.woff" />
+    <None Include="Properties\PublishProfiles\puravida.pubxml" />
     <None Include="Properties\PublishProfiles\beta - local.pubxml" />
     <None Include="Properties\PublishProfiles\beta.pubxml" />
-    <Content Include="publish.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

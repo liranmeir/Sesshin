@@ -12,7 +12,7 @@
                         @Model.Text
 
                         <br>
-                      תודה!
+                        תודה!
                     </i>
                 </div>
                 <div class="col-md-10 col-md-offset-1 col-xs-12 ro-section-mb-small" ng-controller="ContactController">
@@ -29,50 +29,54 @@
                                        placeholder="שם"
                                        ng-model="formData.name"
                                        ng-class="{ 'has-error': contactform.name.$invalid && submitted }"
-                                       required/>
+                                       required />
                                 <input type="text"
                                        name="phone"
                                        placeholder="טלפון"
                                        required class="required"
                                        ng-model="formData.phone"
-                                       ng-class="{ 'has-error': contactform.phone.$invalid && submitted }"/>
+                                       ng-class="{ 'has-error': contactform.phone.$invalid && submitted }" />
                             </div>
                             <div class="col-md-4">
 
                                 @*<input type="text" placeholder="תאריך" class="ro-date-picker" />*@
-                                <input type="text" placeholder="אימייל" name="email" ng-model="formData.email"/>
+                                <input type="text" placeholder="אימייל" name="email" ng-model="formData.email" />
 
                                 <button type="submit" class="ro-submit ro-btn-2" ng-disabled="submitButtonDisabled">הזמן</button>
 
 
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group">
-                                <div class="col-md-10">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"
-                                                   name="isAcceptMail"
-                                                   ng-model="formData.IsAcceptMail"
-                                                   ng-true-value="true" 
-                                                   ng-false-value="false"> מוכן לקבל דיוור
-                                        </label>
-                                    </div>
-                                </div>
-                            </div></div>
+                        <div class="form-inline">
+
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"
+                                           name="isAcceptMail"
+                                           ng-model="formData.IsAcceptMail"
+                                           ng-true-value="true"
+                                           ng-false-value="false"> מוכן לקבל דיוור
+                                </label>
+                            </div>
+
+
+                        </div>
                     </form>
                     <p ng-class="result" class="rtl" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
 
                 </div>
                 <div class="col-xs-12 ro-section-mb-big">
-                    <div class="ro-font-size-4 text-center"><b>שעות פתיחה:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        א-ה&nbsp;&nbsp;
-                        8:00-21:00&nbsp;&nbsp;/&nbsp;&nbsp;
-                        ו-ש&nbsp;&nbsp;
-                        9:00-21:00&nbsp;&nbsp; 
+                    <div class="ro-font-size-4 text-center">
+                        <b>
+                            שעות פתיחה:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            א-ה&nbsp;&nbsp;
+                            8:00-21:00&nbsp;&nbsp;/&nbsp;&nbsp;
+                            ו-ש&nbsp;&nbsp;
+                            9:00-21:00&nbsp;&nbsp;
 
-                    </b></div>
+                        </b>
+                    </div>
                 </div>
             </div>
         </div>

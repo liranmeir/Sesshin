@@ -24,18 +24,18 @@ namespace Sesshin.Website.Beta
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.css", new CssRewriteUrlTransform())
+                      .Include("~/Content/site.css"));
 
 
             //new
 
-            bundles.Add(new StyleBundle("~/assets/css").Include(
-                      "~/assets/fonts/aqua/aqua.css",
-                      "~/assets/fonts/nachlieliclm/stylesheet.css",
-                      "~/assets/fonts/icon-fonts/styles.css",
-                      "~/assets/styles/plugins.css",
-                      "~/assets/styles/main.css"));
+            bundles.Add(new StyleBundle("~/assets/css")
+                .Include("~/assets/fonts/aqua/aqua.css", new CssRewriteUrlTransform())
+                .Include("~/assets/fonts/nachlieliclm/stylesheet.css", new CssRewriteUrlTransform())
+                .Include("~/assets/fonts/icon-fonts/styles.css", new CssRewriteUrlTransform())
+               .Include("~/assets/styles/plugins.css",
+                "~/assets/styles/main.css"));
 
             bundles.Add(new StyleBundle("~/vendors/css").Include(
                       "~/vendors/flexslider/flexslider.css",
@@ -43,16 +43,21 @@ namespace Sesshin.Website.Beta
 
 
             bundles.Add(new ScriptBundle("~/vendors/script").Include(
-                      "~/vendors/jquery/dist/jquery.min.js",
-                      "~/vendors/bootstrap/dist/js/bootstrap.min.js",
-                      "~/vendors/flexslider/jquery.flexslider-min.js",
-                      "~/vendors/jssor-slider/js/jssor.slider.mini.js",
-                      "~/vendors/jquery-ui/ui/minified/datepicker.min.js",
-                      "~/vendors/countdown/jquery.plugin.min.js",
-                      "~/vendors/countdown/jquery.countdown.min.js",
-                      "~/vendors/jquery-mousewheel/jquery.mousewheel.min.js",
+                      "~/vendors/jquery/dist/jquery.js",
+                      "~/vendors/bootstrap/dist/js/bootstrap.js",
+                      "~/vendors/flexslider/jquery.flexslider.js",
+
+
+
+                      //"~/vendors/jquery-ui/ui/minified/datepicker.min.js",
+                //"~/vendors/countdown/jquery.plugin.min.js",
+                //"~/vendors/countdown/jquery.countdown.min.js",
+
+
+                      "~/vendors/jquery-mousewheel/jquery.mousewheel.js",
                       "~/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js",
-                      "~/vendors/jQuery.dotdotdot/src/js/jquery.dotdotdot.min.js"));
+                      "~/vendors/jQuery.dotdotdot/src/js/jquery.dotdotdot.js"
+                      ));
 
 
         }
