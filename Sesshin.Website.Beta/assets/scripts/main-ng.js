@@ -13,7 +13,6 @@ app.controller('ContactController', function ($scope, $http) {
         $scope.submitButtonDisabled = true;
 
         if (contactform.$valid) {
-            
             $http
                 .post("/api/contact", {
                      Name: contactform.name.$modelValue,

@@ -143,7 +143,7 @@ jQuery(document).ready(function($) {
                 $Top: $JssorEasing$.$EaseInOutSine
             },
             $Opacity: 2
-        };
+        }; 
 
         var options = {
             $AutoPlay: true, //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
