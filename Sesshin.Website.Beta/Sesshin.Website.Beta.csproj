@@ -336,6 +336,7 @@
     <Content Include="assets\images\testimonial.jpg" />
     <Content Include="assets\scripts\main-ng.js" />
     <Content Include="assets\scripts\main.js" />
+    <Content Include="assets\scripts\stickyness.js" />
     <Content Include="assets\scripts\utils.js" />
     <Content Include="assets\styles\main.css" />
     <Content Include="assets\styles\plugins.css" />
@@ -370,6 +371,8 @@
     <Content Include="assets\fonts\nachlieliclm\nachlieliclm-lightoblique-webfont.eot" />
     <Content Include="assets\fonts\nachlieliclm\nachlieliclm-lightoblique-webfont.ttf" />
     <Content Include="assets\fonts\nachlieliclm\nachlieliclm-lightoblique-webfont.woff" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\puravida.pubxml" />
     <None Include="Properties\PublishProfiles\beta - local.pubxml" />
     <None Include="Properties\PublishProfiles\beta.pubxml" />
@@ -1505,7 +1508,9 @@
     <Content Include="vendors\modernizr\test\qunit\qunit.js" />
     <Content Include="vendors\modernizr\test\qunit\run-qunit.js" />
     <Content Include="vendors\smooth-scroll\SmoothScroll.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

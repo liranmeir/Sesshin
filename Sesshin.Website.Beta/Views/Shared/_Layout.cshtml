@@ -7,11 +7,11 @@
     <link rel="shortcut icon" href="~/assets/images/favicon.png">
     <meta name="description" content="פורה וידה - מסאג' עד הבית, עיסוי באירועים, מתנות מיוחדות">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     @Styles.Render("~/assets/css")
     @Styles.Render("~/vendors/css")
 
-   
+    
     @*TODO <script src="vendors/modernizr/modernizr.js"></script>*@
     <!-- endbuild -->
 </head>
@@ -22,18 +22,23 @@
     <nav id="ro-main-nav" class="ro-main-nav-style-2 ">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-12 col-xs-10">
+                <div class="col-md-2 col-sm-6 col-xs-6">
                     <a href="\">
                         <img src="/assets/images/purev-logo.jpg" alt="aqua spa" class="ro-brand" />
                     </a>
                 </div>
-                <div class="col-md-9 col-sm-12 col-xs-2">
-                    <ul class="ro-nav-content text-center rtl">
-                        <li class="visible-xs"><a href="index.html"><img src="/assets/images/aqua-brand3.svg" alt="Pura vida" /></a></li>
-                        <li>
-                            <a href="#home">דף הבית</a>
+                <div class="col-md-2 col-sm-2 col-xs-4  h3">
 
-                        </li>
+                    <a href="tel:0542341004" class=" btn btn-info btn-sm btn-md  call-me">
+                        <span class="glyphicon glyphicon-earphone"></span> 054-2341004
+                    </a>
+
+                </div>
+                <div class="col-md-8 col-sm-12 col-xs-2">
+                    <ul class="ro-nav-content text-center rtl">
+                        @*<li class="visible-xs"><a href="/"><img src="/assets/images/purev-logo.jpg" alt="Pura vida" /></a></li>*@
+                        <li><a href="#home" class="ro-easing-link">דף הבית</a></li>
+
                         <li><a href="#service" class="ro-easing-link">אודות</a></li>
                         @*<li><a href="#space" class="ro-easing-link">SPACE</a></li>*@
                         <li><a href="#testimonial" class="ro-easing-link">מכתבי תודה</a></li>
@@ -42,87 +47,95 @@
                         @*<li><a href="#shop" class="ro-easing-link">חנות</a></li>*@
                         <li><a href="#price" class="ro-easing-link">מחירון</a></li>
                         <li><a href="#space" class="ro-easing-link">גלריה</a></li>
+                        <li><a href="#reservation" class="ro-easing-link">הזמנות</a></li>
                         @*                        <li><a href="#reservation" class="ro-easing-link">בלוג</a></li>*@
                     </ul>
                     <div id="ro-hamburger" class="ro-hamburger visible-xs pull-right"><span></span></div>
                 </div>
 
+                
             </div>
         </div>
     </nav>
-<div id="ro-main" class="ro-main clearfix ">
-    
-    
-    @RenderBody()
-    <footer class="ro-bg-dark ro-section">
-        <div class="container">
-            <div class="ro-main-footer">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 ro-footer-item">
-                        <h5>Pura Vida Spa & More</h5>
-                        <p>info@sesshin.co.il /<br/>puravida.sesshin.co.il<br/>054-2341004 / 03-1234567
-                        </p>
-                        <a  class="ro-btn-bd-1 hvr-radial-out">רוצים לקבל מאיתנו שובר מתנה ?</a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12 ro-footer-item">
-                        <h5>כתובתנו</h5>
-                        <p>חברון 4 תל אביב<br/>ישראל
-                        </p><br class="hidden-xs"/>
-                        <a href="@(Url.Action("Careers", "Home"))" class="ro-btn-bd-1 hvr-radial-out">דרושים</a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12ro-footer-item ro-open-time">
-                        <h5>שעות פתיחה</h5>
-                        <p>א-ה &nbsp;
-                            8:00am - 9:00pm
-                        </p>
-                        <p>ו-ש &nbsp;
-                            9:00pm - 9:00pm
-                        </p>
-                    </div>
-                    <div class="col-lg-1 visible-lg">
-                        <div class="ro-footer-separator"></div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-7 col-xs-12 ro-footer-item">
-                        <h5>ניוזלטר</h5>
-                        <div class="ro-footer-newletter">
-                            <input type="text"/><a ><i class="icon-basic-mail-open-text"></i></a>
+    <div id="ro-main" class="ro-main clearfix ">
+
+
+        @RenderBody()
+        <footer class="ro-bg-dark ro-section">
+            <div class="container">
+                <div class="ro-main-footer">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 ro-footer-item">
+                            <h5>Pura Vida Spa & More</h5>
+                            <p>
+                                info@sesshin.co.il /<br />puravida.sesshin.co.il<br /><span class="blueify">054-2341004</span> / 03-1234567
+                            </p>
+                            <a class="ro-btn-bd-1 hvr-radial-out">רוצים לקבל מאיתנו שובר מתנה ?</a>
                         </div>
-                        <ul class="ro-social">
-                            <li><a ><i class="icon-facebook"></i></a></li>
-                            <li><a ><i class="icon-twitter"></i></a></li>
-                            <li><a ><i class="icon-gplus"></i></a></li>
-                            <li><a ><i class="icon-stumbleupon"></i></a></li>
-                            <li><a ><i class="icon-tumblr"></i></a></li>
-                            <li><a ><i class="icon-vimeo"></i></a></li>
-                            <li><a ><i class="icon-pinterest"></i></a></li>
-                            <li><a ><i class="icon-dribbble"></i></a></li>
-                            <li><a ><i class="icon-instagrem"></i></a></li>
-                        </ul>
+                        <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12 ro-footer-item">
+                            <h5>כתובתנו</h5>
+                            <p>
+                                חברון 4 תל אביב<br />ישראל
+                            </p><br class="hidden-xs" />
+                            <a href="@(Url.Action("Careers", "Home"))" class="ro-btn-bd-1 hvr-radial-out">דרושים</a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-5 col-xs-12ro-footer-item ro-open-time">
+                            <h5>שעות פתיחה</h5>
+                            <p>
+                                א-ה &nbsp;
+                                8:00am - 9:00pm
+                            </p>
+                            <p>
+                                ו-ש &nbsp;
+                                9:00pm - 9:00pm
+                            </p>
+                        </div>
+                        <div class="col-lg-1 visible-lg">
+                            <div class="ro-footer-separator"></div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-7 col-xs-12 ro-footer-item">
+                            <h5>ניוזלטר</h5>
+                            <div class="ro-footer-newletter">
+                                <input type="text" /><a><i class="icon-basic-mail-open-text"></i></a>
+                            </div>
+                            <ul class="ro-social">
+                                <li><a><i class="icon-facebook"></i></a></li>
+                                <li><a><i class="icon-twitter"></i></a></li>
+                                <li><a><i class="icon-gplus"></i></a></li>
+                                <li><a><i class="icon-stumbleupon"></i></a></li>
+                                <li><a><i class="icon-tumblr"></i></a></li>
+                                <li><a><i class="icon-vimeo"></i></a></li>
+                                <li><a><i class="icon-pinterest"></i></a></li>
+                                <li><a><i class="icon-dribbble"></i></a></li>
+                                <li><a><i class="icon-instagrem"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="ro-foot-footer">
+                    <h6>
+                        © @(DateTime.Now.Year) PURA-VIDA MASSAGE AND MORE. BY
+                        <a href="http://www.sesshin.co.il">SESSHIN.CO.IL</a>
+                    </h6>
+                </div>
             </div>
-            <div class="ro-foot-footer">
-                <h6>© @(DateTime.Now.Year) PURA-VIDA MASSAGE AND MORE. BY
-                    <a href="http://www.sesshin.com">SESSHIN.CO.IL</a></h6>
-            </div>
+        </footer>
+        <div id="ro-backtop">
+            <i class="icon-up"></i>
         </div>
-    </footer>
-    <div id="ro-backtop"><i class="icon-up"></i>
     </div>
-</div>
     <!-- build:js vendors/vendors-compressed/plugins-min.js -->
-
     @*<script src='vendors/jquery/dist/jquery.min.js'></script>
-    <script src='vendors/bootstrap/dist/js/bootstrap.min.js'></script>
-    <script src='vendors/flexslider/jquery.flexslider-min.js'></script>
-    <script src='vendors/jssor-slider/js/jssor.slider.mini.js'></script>
-    <script src='vendors/jquery-ui/ui/minified/datepicker.min.js'></script>
-    <script src='vendors/countdown/jquery.plugin.min.js'></script>
-    <script src='vendors/countdown/jquery.countdown.min.js'></script>
-    <script src='vendors/jquery-mousewheel/jquery.mousewheel.min.js'></script>
-    <script src='vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js'></script>
-    <script src='vendors/jQuery.dotdotdot/src/js/jquery.dotdotdot.min.js'></script>*@
-    
+        <script src='vendors/bootstrap/dist/js/bootstrap.min.js'></script>
+        <script src='vendors/flexslider/jquery.flexslider-min.js'></script>
+        <script src='vendors/jssor-slider/js/jssor.slider.mini.js'></script>
+        <script src='vendors/jquery-ui/ui/minified/datepicker.min.js'></script>
+        <script src='vendors/countdown/jquery.plugin.min.js'></script>
+        <script src='vendors/countdown/jquery.countdown.min.js'></script>
+        <script src='vendors/jquery-mousewheel/jquery.mousewheel.min.js'></script>
+        <script src='vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js'></script>
+        <script src='vendors/jQuery.dotdotdot/src/js/jquery.dotdotdot.min.js'></script>*@
+
     @Scripts.Render("~/vendors/script")
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
 
@@ -130,21 +143,21 @@
     @Scripts.Render("/assets/scripts/utils.js")
     @Scripts.Render("/assets/scripts/main.js")
     @Scripts.Render("/assets/scripts/main-ng.js")
-   
-    
+    @Scripts.Render("/assets/scripts/stickyness.js")
+
 
     @RenderSection("scripts", required: false)
-<!-- endbuild -->
+    <!-- endbuild -->
     <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-8546041-2', 'auto');
-    ga('send', 'pageview');
+        ga('create', 'UA-8546041-2', 'auto');
+        ga('send', 'pageview');
 
     </script>
 </body>

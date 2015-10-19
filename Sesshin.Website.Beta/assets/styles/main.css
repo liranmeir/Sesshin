@@ -1315,10 +1315,15 @@ ul {
 
 .ro-main-nav-style-2 {
   position: relative;
-  padding: 50px 0; }
+  padding: 10px 0; }
   .ro-main-nav-style-2 .ro-brand {
     display: inline-block;
-    height: 85px; }
+     
+      border-radius: 25px;
+      height: 65px;
+      height: 60px;
+      
+  }
 
 .ro-main-nav-style-3 {
   position: absolute;
@@ -3064,4 +3069,30 @@ ul {
 	content: "*";
 	font-weight: bold;
 	color: red; 
+}.blueify {
+     color: #337ab7;
+ }
+.call-me {
+   
+       margin-top: 10px;
+    border-radius: 10px
 }
+
+ nav {
+            transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -webkit-transition: all 0.4s ease;
+        }
+
+            nav.sticky {
+                position: fixed;
+                background-color: #2b2b2b;
+              
+                z-index: 1000;
+                color: #FFFFFF;
+                padding: 10px 0;
+                width: 100%;
+            }
+
+            .col-md-3 .ro-brand{margin-top :10px}

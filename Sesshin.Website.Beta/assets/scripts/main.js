@@ -20,8 +20,10 @@ jQuery(document).ready(function($) {
         var $root = $('html, body');
         $('.ro-easing-link-group a , .ro-easing-link').on('click', function() {
             var href = $.attr(this, 'href');
+            
+            var navHeight = $('#ro-main-nav').height();
             $root.animate({
-                scrollTop: ($(href).offset().top)
+                scrollTop: ($(href).offset().top - navHeight)
             }, 500, function() {
                 window.location.hash = href;
             });
