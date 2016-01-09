@@ -11,9 +11,29 @@
     @Styles.Render("~/assets/css")
     @Styles.Render("~/vendors/css")
 
-    
-    @*TODO <script src="vendors/modernizr/modernizr.js"></script>*@
+
+
     <!-- endbuild -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function() {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+        document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '149949155365552');
+        fbq('track', "PageView");
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=149949155365552&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 <body ng-app="sesshinApp">
     <!--[if lt IE 8]>
@@ -27,10 +47,10 @@
                         <img src="/assets/images/purev-logo.jpg" alt="aqua spa" class="ro-brand" />
                     </a>
                 </div>
-                <div class="col-md-2 col-sm-2 col-xs-4  h3">
+                <div class="col-md-2 col-sm-2 col-xs-4  h4">
 
-                    <a href="tel:0542341004" class=" btn btn-info btn-sm btn-md  call-me">
-                        <span class="glyphicon glyphicon-earphone"></span> 054-2341004
+                    <a href="tel:0544757080" class=" btn btn-info btn-sm btn-md  call-me">
+                        <span class="glyphicon glyphicon-earphone"></span> 054-4757080
                     </a>
 
                 </div>
@@ -53,7 +73,7 @@
                     <div id="ro-hamburger" class="ro-hamburger visible-xs pull-right"><span></span></div>
                 </div>
 
-                
+
             </div>
         </div>
     </nav>
@@ -68,7 +88,7 @@
                         <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12 ro-footer-item">
                             <h5>Pura Vida Spa & More</h5>
                             <p>
-                                info@sesshin.co.il /<br />puravida.sesshin.co.il<br /><span class="blueify">054-2341004</span> / 03-1234567
+                                info@sesshin.co.il /<br />puravida.sesshin.co.il<br /><span class="blueify">054-4757080</span>
                             </p>
                             <a class="ro-btn-bd-1 hvr-radial-out">רוצים לקבל מאיתנו שובר מתנה ?</a>
                         </div>

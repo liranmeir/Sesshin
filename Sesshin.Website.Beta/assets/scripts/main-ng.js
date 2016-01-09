@@ -18,7 +18,7 @@ app.controller('ContactController', function ($scope, $http) {
                      Name: contactform.name.$modelValue,
                      Phone: contactform.phone.$modelValue,
                      Email: contactform.email.$modelValue,
-                     Remarks: contactform.remarks.$modelValue,
+                     Remarks: contactform.remarks.$modelValue +' (pura-vida lead)',
                      IsAcceptMail: contactform.isAcceptMail.$modelValue,
                      IsRequestMobile: mobilecheck() 
                 })
