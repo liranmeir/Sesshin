@@ -36,5 +36,13 @@ namespace Sesshin.Service
         {
             return(userAgent.Contains("iPhone") || userAgent.Contains("Windows Phone") || userAgent.Contains("Android"));
         }
+
+        public static bool IsDispalyActiveTrail(string englishName)
+        {
+            return englishName == "shiatsu-at-home-for pregnant-woman" ||
+                   englishName == "medical-massage"||
+                   englishName == "couple-massage"||
+                   englishName == "single-massage";
+        }
     }
 }

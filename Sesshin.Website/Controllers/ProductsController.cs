@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Sesshin.DAL;
 using Sesshin.Model;
-using Sesshin.Website.Models;
 using Sesshin.Service;
-
+using Sesshin.Website.Models;
 
 namespace Sesshin.Website.Controllers
 {
@@ -19,6 +15,11 @@ namespace Sesshin.Website.Controllers
         //public ActionResult Details(int id)
         public ActionResult Details(string englishName)
         {
+            if (Utils.IsDispalyActiveTrail(englishName))
+            {
+                ViewBag.IsDispalyActiveTrail = true;
+            }
+
             using (var db = new   ProductRepository())
             {
                 //var product = db.Find(id);

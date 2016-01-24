@@ -26,6 +26,11 @@ namespace Sesshin.Website.Controllers
 
         public ActionResult Details(string englishName)
         {
+            if (Utils.IsDispalyActiveTrail(englishName))
+            {
+                ViewBag.IsDispalyActiveTrail = true;
+            }
+
             using (var db = new ArticleRepository())
             {
                 var article = db.Find(englishName);

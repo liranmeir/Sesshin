@@ -185,7 +185,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\mobile-styles.css" />
     <Content Include="Content\mobile\1.4.2\jquery.mobile.structure-1.4.2.min.css" />
@@ -595,6 +594,7 @@
     <Content Include="Views\Home\ThankYou.Mobile.cshtml" />
     <Content Include="Scripts\jquery.nanoscroller.min.js.map" />
     <Content Include="Views\Shared\_GoogleConversionMarketing.cshtml" />
+    <Content Include="Views\Shared\_ActiveTrailPopup.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

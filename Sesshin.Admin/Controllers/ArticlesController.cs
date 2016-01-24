@@ -37,6 +37,7 @@ namespace Sesshin.Admin.Controllers
 
         public ViewResult Details(int id)
         {
+           
             return View(articleRepository.Find(id));
         }
 
